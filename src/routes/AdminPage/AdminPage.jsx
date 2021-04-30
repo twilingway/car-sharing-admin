@@ -24,9 +24,7 @@ import s from './adminpage.module.scss';
 import Hamburger from '../../components/Hamburger';
 
 function AdminPage() {
-  const onChangeServices = () => {
-    console.log('object :>> ');
-  };
+  const onChangeServices = () => {};
   return (
     <div className={s.wrapper}>
       <sidebar className={s.sidebar}>

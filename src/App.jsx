@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import cn from 'classnames';
 import LoginPageContainer from './routes/Login';
+import AdminPageContainer from './routes/AdminPage';
 
 import s from './app.module.scss';
 
@@ -15,8 +16,8 @@ function App() {
             <div className={s.container}>
               <Switch>
                 <Route path="/" exact component={LoginPageContainer} />
-                {/* <Route path="/order" exact component={OrderPage} />
-                <Route path="/order/:id" exact component={OrderPage} /> */}
+                <Route path="/admin" exact component={AdminPageContainer} />
+
                 <Route render={() => <Redirect to="/404" />} />
               </Switch>
             </div>

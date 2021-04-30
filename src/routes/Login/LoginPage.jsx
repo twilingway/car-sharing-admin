@@ -1,13 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as LogoSVG } from '../../assets/logo.svg';
 
 import s from './login.module.scss';
 
-function LoginPage() {
+function LoginPage({ onClickButton }) {
   return (
     <div className={s.context}>
       <div className={s.header}>
-        <Logo />
+        <LogoSVG />
         <span className={s.title}>Need for drive</span>
       </div>
       <form
@@ -37,7 +38,9 @@ function LoginPage() {
         </div>
         <div className={s.footer}>
           <span>Запросить доступ</span>
-          <button type="button">Войти</button>
+          <button type="button" onClick={onClickButton}>
+            Войти
+          </button>
         </div>
       </form>
     </div>

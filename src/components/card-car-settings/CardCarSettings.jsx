@@ -1,10 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import cn from 'classnames';
 import FilterCheckbox from '../Filter/Filter-types/Filter-checkbox';
 
 import s from './card-car-settings.module.scss';
 
-function CardCarSettings({ onChangeServices }) {
+function CardCarSettings({
+  onChangeServices,
+  onClickSaveButton,
+  onClickCanselButton,
+  onClickDeleteButton,
+}) {
   return (
     <div className={s.carSettings}>
       <div className={s.container}>
@@ -45,7 +51,7 @@ function CardCarSettings({ onChangeServices }) {
             </div>
           </div>
         </div>
-        <div>
+        <div className={s.filters}>
           <FilterCheckbox
             checkboxs={[
               {
@@ -75,6 +81,31 @@ function CardCarSettings({ onChangeServices }) {
             }
             isColumn
           />
+        </div>
+        <div className={s.buttonsBar}>
+          <div>
+            <button
+              className={cn(s.button, s.save)}
+              type="button"
+              onClick={onClickSaveButton}
+            >
+              Сохранить
+            </button>
+            <button
+              className={cn(s.button, s.cansel)}
+              type="button"
+              onClick={onClickCanselButton}
+            >
+              Отменить
+            </button>
+          </div>
+          <button
+            className={cn(s.button, s.delete)}
+            type="button"
+            onClick={onClickDeleteButton}
+          >
+            Удалить
+          </button>
         </div>
       </div>
     </div>

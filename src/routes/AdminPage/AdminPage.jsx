@@ -1,98 +1,27 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import cn from 'classnames';
-import { ReactComponent as LogoSVG } from '../../assets/logo.svg';
 
 import { ReactComponent as CheckSVG } from '../../assets/check_icon.svg';
 
 import { ReactComponent as SearchSVG } from '../../assets/search.svg';
 
-import { ReactComponent as PanSVG } from '../../assets/pan.svg';
-import { ReactComponent as PostSVG } from '../../assets/posts.svg';
-
-import { ReactComponent as NewPostSVG } from '../../assets/newPosts.svg';
 import { ReactComponent as NotifySVG } from '../../assets/notifications.svg';
 import { ReactComponent as DropdownSVG } from '../../assets/dropdown_icon.svg';
 import { ReactComponent as CloseSVG } from '../../assets/close.svg';
 
 import avatarPNG from '../../assets/avatar.png';
 
-import CardCarContainer from '../../components/card-car';
-import CardCarSettingsContainer from '../../components/card-car-settings';
-
 import s from './adminpage.module.scss';
 import Hamburger from '../../components/Hamburger';
+import SideBarContainer from '../../components/SideBar';
 
-function AdminPage() {
+function AdminPage({ children }) {
   const onChangeServices = () => {};
   return (
     <div className={s.wrapper}>
-      <sidebar className={s.sidebar}>
-        <div className={s.logo}>
-          <LogoSVG className={s.svg} />
-          <span className={s.name}>Need for drive</span>
-        </div>
-        <ul className={s.items}>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: true,
-            })}
-          >
-            <div className={s.sidebarSvg}>
-              <PanSVG />
-            </div>
-            <span> Карточка автомобиля</span>
-          </li>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: false,
-            })}
-          >
-            <div className={s.sidebarSvg}>
-              <PostSVG />
-            </div>
-            <span> Список авто</span>
-          </li>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: false,
-            })}
-          >
-            <div className={s.sidebarSvg}>
-              <NewPostSVG />
-            </div>
-            <span>Заказы</span>
-          </li>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: false,
-            })}
-          >
-            Menu 4
-          </li>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: false,
-            })}
-          >
-            Menu 5
-          </li>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: false,
-            })}
-          >
-            Menu 6
-          </li>
-          <li
-            className={cn(s.item, {
-              [s.item_active]: false,
-            })}
-          >
-            Menu 7
-          </li>
-        </ul>
-      </sidebar>
+      <SideBarContainer />
       <content className={s.content}>
         <header className={s.header}>
           <div className={s.search}>
@@ -111,19 +40,20 @@ function AdminPage() {
             </div>
           </div>
         </header>
-        <action className={s.action}>
+        <div className={s.action}>
           <CheckSVG />
           <span>Успех! Машина сохранена</span>
           <CloseSVG className={s.close} />
-        </action>
+        </div>
         <main className={s.main}>
-          <div className={s.title}>
+          {children}
+          {/* <div className={s.title}>
             <h1>Карточка автомобиля</h1>
           </div>
           <div className={s.cardAuto}>
             <CardCarContainer />
             <CardCarSettingsContainer />
-          </div>
+          </div> */}
         </main>
         <footer className={s.footer}>
           <div className={s.hamburger}>

@@ -16,8 +16,8 @@ function App() {
             <div className={s.container}>
               <Switch>
                 <Route path="/" exact component={LoginPageContainer} />
-                <Route path="/admin" exact component={AdminPageContainer} />
-
+                {/* <Route path="/admin" exact component={AdminPageContainer} /> */}
+                <Route path="/admin/:id" component={AdminPageContainer} />
                 <Route render={() => <Redirect to="/404" />} />
               </Switch>
             </div>

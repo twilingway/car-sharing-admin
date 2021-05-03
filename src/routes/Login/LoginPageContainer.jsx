@@ -5,7 +5,7 @@ import LoginPage from './LoginPage';
 function LoginPageContainer() {
   const history = useHistory();
 
-  return <LoginPage onClickButton={() => history.push('/admin')} />;
+  return <LoginPage onClickButton={() => history.push('/admin/card')} />;
 }
 
 export default LoginPageContainer;

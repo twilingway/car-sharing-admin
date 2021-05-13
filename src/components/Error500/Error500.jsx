@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Button from '../Button';
 
 import s from './error-500.module.scss';
 
@@ -10,9 +11,10 @@ function Error500({ onClickBackButton }) {
         <div className={s.title}>500</div>
         <div className={s.text}>Что то пошло не так</div>
         <div className={s.footer}>Попробуйте перезагрузить страницу</div>
-        <button type="button" onClick={onClickBackButton}>
+        <Button name="Назад" onClickHandler={onClickBackButton} />
+        {/* <button type="button" onClick={onClickBackButton}>
           Назад
-        </button>
+        </button> */}
       </div>
     </div>
   );

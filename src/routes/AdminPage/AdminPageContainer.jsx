@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import CarCardContainer from '../../components/car-card';
 import CarListContainer from '../../components/car-list';
-import CarOrderContainer from '../../components/car-order';
+import CarOrderContainer from '../../components/CarOrder';
 import Error500Container from '../../components/Error500';
 import AdminPage from './AdminPage';
 

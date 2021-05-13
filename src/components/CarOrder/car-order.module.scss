@@ -1,0 +1,88 @@
+.title {
+  display: flex;
+  flex: 0 0 68px;
+
+  @media (max-width: 1024px) {
+    flex: 0 1 auto;
+  }
+
+  @media (max-width: 460px) {
+    justify-content: center;
+  }
+  h1 {
+    font-size: 29px;
+    line-height: 33px;
+    letter-spacing: -0.725px;
+
+    color: #3d5170;
+  }
+}
+
+.carOrder {
+  display: flex;
+  flex: 0 1 386px;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 0px rgba(90, 97, 105, 0.11),
+    0px 4px 8px rgba(90, 97, 105, 0.12), 0px 10px 10px rgba(90, 97, 105, 0.06),
+    0px 7px 70px rgba(90, 97, 105, 0.1);
+  border-radius: 9px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // padding: 0 18px;
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      align-items: center;
+      min-height: 60px;
+      box-shadow: 0px -0.5px 0px #e0e2e8, 0px 0.5px 0px #e0e2e8;
+
+      .filters {
+        display: flex;
+        // justify-content: space-between;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+        max-width: 500px;
+        margin-left: 22px;
+      }
+      button {
+        margin-left: auto;
+        flex: 0 0 95px;
+        margin-right: 22px;
+        height: 30px;
+        background: #007bff;
+        border: 0.5px solid #007bff;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        font-family: Helvetica;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 13px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: -0.345714px;
+
+        color: #ffffff;
+      }
+    }
+    .main {
+      flex: 1 1 auto;
+      min-height: 268px;
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 60px;
+      height: 60px;
+      box-shadow: 0px -0.5px 0px #e0e2e8, 0px 0.5px 0px #e0e2e8;
+    }
+  }
+}

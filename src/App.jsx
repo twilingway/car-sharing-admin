@@ -5,6 +5,7 @@ import LoginPageContainer from './routes/Login';
 import AdminPageContainer from './routes/AdminPage';
 
 import s from './app.module.scss';
+import PrivateRoute from './hoc/PrivateRoute';
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
               <Switch>
                 <Route path="/" exact component={LoginPageContainer} />
                 {/* <Route path="/admin" exact component={AdminPageContainer} /> */}
-                <Route path="/admin/:id" component={AdminPageContainer} />
+                <PrivateRoute
+                  path="/admin/:id"
+                  component={AdminPageContainer}
+                />
                 <Route render={() => <Redirect to="/404" />} />
               </Switch>
             </div>

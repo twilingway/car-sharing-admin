@@ -1,5 +1,7 @@
+@import '../../variables';
+
 .button {
-  background: var(--primary-accent);
+  background: $primary-accent;
   background-blend-mode: darken;
   border-radius: 4px;
   width: 110px;
@@ -9,14 +11,21 @@
   outline: none;
 
   &.disable {
-    background: #eeeeee;
+    background: $grey-light;
+  }
+
+  &:hover {
+    background: darken($primary-accent, 20%);
+  }
+  &:active {
+    background: darken($primary-accent, 10%);
   }
 
   .text {
     display: flex;
     justify-content: center;
 
-    color: white;
+    color: $primary-white;
     font-style: normal;
     font-weight: normal;
     font-size: 11.5px;
@@ -43,14 +52,26 @@
   }
 
   &[data-background='red'] {
-    background: var(--secondary-red);
+    background: $secondary-red;
+    &:hover {
+      background: darken($secondary-red, 20%);
+    }
+    &:active {
+      background: darken($secondary-red, 10%);
+    }
   }
 
   &[data-background='gray'] {
-    background: var(--secondary-gray);
+    background: $secondary-gray;
+    &:hover {
+      background: darken($secondary-gray, 20%);
+    }
+    &:active {
+      background: darken($secondary-gray, 10%);
+    }
 
     .text {
-      color: #3d5170;
+      color: $button-gray-text;
     }
   }
 }

@@ -17,7 +17,6 @@ function App() {
             <div className={s.container}>
               <Switch>
                 <Route path="/" exact component={LoginPageContainer} />
-                {/* <Route path="/admin" exact component={AdminPageContainer} /> */}
                 <PrivateRoute
                   path="/admin/:id"
                   component={AdminPageContainer}

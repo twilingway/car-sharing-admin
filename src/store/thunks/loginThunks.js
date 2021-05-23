@@ -1,10 +1,14 @@
-import { createAsyncThunk, } from '@reduxjs/toolkit';
-import getRateType from '../../Api/rateTypeApi';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import login from '../../api/loginApi';
 
-const fetchRateType = createAsyncThunk('rateType/fetchRateType',
-    async () => {
-        const response = await getRateType();
-        return response.data;
-    }
+const fetchLogin = createAsyncThunk('login/fetchLogin', async (data) => {
+  const response = await login(data);
+  return response;
+});
+
+export const fetchLogout = createAsyncThunk(
+  'login/fetchLogout',
+  async () => {},
 );
-export default fetchRateType;
+
+export default fetchLogin;

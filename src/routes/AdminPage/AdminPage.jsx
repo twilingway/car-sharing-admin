@@ -17,7 +17,7 @@ import s from './adminpage.module.scss';
 import Hamburger from '../../components/Hamburger';
 import SideBarContainer from '../../components/SideBar';
 
-function AdminPage({ children }) {
+function AdminPage({ children, onLogout }) {
   const onChangeServices = () => {};
   return (
     <div className={s.wrapper}>
@@ -36,15 +36,15 @@ function AdminPage({ children }) {
             <div className={s.user}>
               <img src={avatarPNG} alt="Avatar" />
               <span>Admin</span>
-              <DropdownSVG className={s.dropdown} />
+              <DropdownSVG className={s.dropdown} onClick={onLogout} />
             </div>
           </div>
         </header>
-        <div className={s.action}>
+        {/* <div className={s.action}>
           <CheckSVG />
           <span>Успех! Машина сохранена</span>
           <CloseSVG className={s.close} />
-        </div>
+        </div> */}
         <main className={s.main}>
           {children}
           {/* <div className={s.title}>

@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
-import style from './filter-radiobox.module.scss';
+import style from './filterRadiobox.module.scss';
 
 function FilterRadiobox({
   id,
@@ -29,7 +29,7 @@ function FilterRadiobox({
       setActive(defaultChecked);
       if (!isAllRadio) {
         radios.map(
-          (item) => item.name === defaultChecked && onChangeRadio(item)
+          (item) => item.name === defaultChecked && onChangeRadio(item),
         );
       } else {
         onChangeRadio(defaultChecked);
@@ -96,7 +96,7 @@ function FilterRadiobox({
                   rate.map(
                     (item) =>
                       item.rateTypeId.id === radio.id &&
-                      `${item.price} ₽/${item.rateTypeId.unit}`
+                      `${item.price} ₽/${item.rateTypeId.unit}`,
                   )}
               </span>
             </label>

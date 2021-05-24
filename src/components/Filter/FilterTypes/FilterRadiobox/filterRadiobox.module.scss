@@ -1,3 +1,5 @@
+@import '../../../../variables';
+
 .type {
   display: flex;
   flex-wrap: wrap;
@@ -13,14 +15,9 @@
     }
 
     legend {
-      font-style: normal;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 16px;
-
       padding-bottom: 18px;
 
-      color: var(--primary-dark);
+      color: $secondary-label;
     }
 
     input[type='radio'] {
@@ -47,8 +44,8 @@
       height: 12px;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      background-color: white;
-      border: 1px solid var(--grey-dark);
+      background-color: $primary-white;
+      border: 1px solid $border-select;
     }
 
     input[type='radio']:checked::after {
@@ -61,7 +58,7 @@
       border-radius: 50%;
 
       transform: translate(-50%, -50%);
-      border: 3px solid var(--primary-accent);
+      border: 3px solid $primary-accent;
       visibility: visible;
     }
 
@@ -69,26 +66,23 @@
       display: flex;
       align-items: center;
       flex-wrap: nowrap;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 16px;
+
       margin-right: 16px;
-      color: var(--grey-dark);
+      color: $grey-dark;
       padding-bottom: 8px;
       &:hover {
         cursor: pointer;
       }
       span {
-        color: var(--grey-dark);
+        color: $grey-dark;
         &.active {
-          color: var(--primary-black);
+          color: $primary-black;
         }
       }
       .rate {
         padding-left: 8px;
         &.active {
-          color: var(--primary-black);
+          color: $primary-black;
         }
       }
     }

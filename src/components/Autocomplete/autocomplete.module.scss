@@ -1,6 +1,7 @@
+@import '../../variables';
+
 .autocomplete {
   display: flex;
-  // flex: 0 0 110px;
 
   .label {
     display: flex;
@@ -8,12 +9,7 @@
     justify-content: flex-end;
     padding: 2px 8px 0 0;
     flex: 1 0 99px;
-    color: var(--primary-black);
-
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
+    color: $primary-black;
   }
 
   .container {
@@ -33,13 +29,7 @@
         outline: none;
         border: none;
 
-        color: var(--primary-black);
-
-        font-family: 'Roboto', sans-serif;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 16px;
+        color: $primary-black;
 
         white-space: nowrap; /* Запрещаем перенос строк */
         overflow: hidden; /* Обрезаем все, что не помещается в область */
@@ -52,7 +42,7 @@
         }
 
         &.border {
-          border-bottom: 1px solid var(--grey-dark);
+          border-bottom: 1px solid $grey-dark;
         }
       }
 
@@ -63,7 +53,7 @@
         height: 8px;
         width: 8px;
 
-        cursor: var(--cursor-pointer);
+        cursor: pointer;
       }
     }
   }
@@ -72,7 +62,7 @@
     display: none;
     overflow-y: auto;
     height: 140px;
-    background-color: #ffffff;
+    background-color: $primary-white;
     overflow: hidden;
     overflow-y: auto;
     &.display {
@@ -81,7 +71,7 @@
       position: absolute;
       min-width: 170px;
       width: max-content;
-      border: 1px solid var(--grey-light);
+      border: 1px solid $grey-light;
       margin-left: 8px;
       z-index: 999;
       opacity: 1;
@@ -92,19 +82,15 @@
     padding-left: 4px;
     margin-top: 3px;
     margin-bottom: 3px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
 
     width: 100%;
-    background-color: #ffffff;
-    color: var(--grey-dark);
+    background-color: $primary-white;
+    color: $grey-dark;
 
     &:hover {
       cursor: pointer;
-      color: var(--primary-accent);
-      background-color: var(--grey-light);
+      color: $primary-accent;
+      background-color: $grey-light;
     }
   }
 }
@@ -115,32 +101,32 @@
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: var(--grey-dark);
+  background-color: $grey-dark;
 }
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
-  color: var(--grey-dark);
+  color: $grey-dark;
 }
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: var(--grey-dark);
+  color: $grey-dark;
   opacity: 1;
 }
 ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: var(--grey-dark);
+  color: $grey-dark;
   opacity: 1;
 }
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: var(--grey-dark);
+  color: $grey-dark;
 }
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: var(--grey-dark);
+  color: $grey-dark;
 }
 
 ::placeholder {
   /* Most modern browsers support this now. */
-  color: var(--grey-dark);
+  color: $grey-dark;
 }

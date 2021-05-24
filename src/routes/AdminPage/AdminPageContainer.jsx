@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouteMatch, useHistory } from 'react-router-dom';
-import CarCardContainer from '../../components/car-card';
+import CarCardContainer from '../../components/CarCard';
 import CarListContainer from '../../components/CarList';
-import CarOrderContainer from '../../components/CarOrder';
 import Error500Container from '../../components/Error500';
+import OrderListContainer from '../../components/OrderList';
 import { fetchLogout } from '../../store/thunks/loginThunks';
 import AdminPage from './AdminPage';
 
@@ -20,7 +20,7 @@ function AdminPageContainer() {
       case 'list':
         return <CarListContainer />;
       case 'order':
-        return <CarOrderContainer />;
+        return <OrderListContainer />;
       case 'error':
         return <Error500Container />;
       default:

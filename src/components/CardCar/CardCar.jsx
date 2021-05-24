@@ -1,15 +1,20 @@
 import React from 'react';
 import carCardPNG from '../../assets/carCard.png';
 
-import s from './card-car.module.scss';
+import s from './cardCar.module.scss';
 
-function CardCar() {
+function CardCar({ onChangeSelectFile, fileName }) {
   return (
     <div className={s.cardCar}>
       <img src={carCardPNG} alt="carCard" />
       <div className={s.name}>Hyndai, i30 N</div>
       <div className={s.type}>Компакт-кар</div>
-      <input type="file" />
+      <input
+        type="file"
+        name="file"
+        accept="image/*"
+        onChange={onChangeSelectFile}
+      />
       <div className={s.progres}>Заполнено</div>
       <div className={s.discription}>
         <div className={s.title}>Описание</div>

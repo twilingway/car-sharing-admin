@@ -2,7 +2,7 @@
 import React from 'react';
 import Button from '../Button';
 
-import s from './error-500.module.scss';
+import s from './error500.module.scss';
 
 function Error500({ onClickBackButton }) {
   return (

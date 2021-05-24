@@ -1,4 +1,6 @@
 /* Customize the label (the container) */
+@import '../../../../variables';
+
 .container {
   position: relative;
   display: flex;
@@ -12,14 +14,10 @@
   -ms-user-select: none;
   user-select: none;
 
-  font-style: normal;
-  font-weight: normal;
   font-size: 10px;
   line-height: 12px;
 
-  letter-spacing: -0.175439px;
-
-  color: #495057;
+  color: $secondary-label;
 }
 
 /* Hide the browser's default checkbox */
@@ -39,19 +37,19 @@
   left: 0;
   height: 13px;
   width: 13px;
-  background: #ffffff;
-  border: 0.5px solid #becad6;
+  background: $primary-white;
+  border: 0.5px solid $border-select;
   border-radius: 2px;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: $secondary-gray;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #007bff;
+  background-color: $primary-accent;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -96,24 +94,16 @@
     }
 
     legend {
-      font-style: normal;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 16px;
-
       padding-bottom: 18px;
 
-      color: var(--primary-dark);
+      color: $secondary-label;
     }
 
     label {
       position: relative;
       padding-bottom: 8px;
 
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 16px;
-      color: #495057;
+      color: $secondary-label;
 
       &:hover {
         cursor: pointer;

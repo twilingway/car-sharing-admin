@@ -1,8 +1,8 @@
 import React from 'react';
-import CardCarContainer from '../card-car';
-import CardCarSettingsContainer from '../card-car-settings';
+import CardCarContainer from '../CardCar';
+import CardCarSettingsContainer from '../CardCarSettings';
 
-import s from './car-card.module.scss';
+import s from './carCard.module.scss';
 
 function CarCard() {
   return (

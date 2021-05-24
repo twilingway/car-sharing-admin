@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 // import cn from 'classnames';
-import FilterCheckbox from '../Filter/Filter-types/Filter-checkbox';
+import FilterCheckbox from '../Filter/FilterTypes/FilterCheckbox';
 
-import s from './card-car-settings.module.scss';
+import s from './cardCarSettings.module.scss';
 import Button from '../Button';
 
 function CardCarSettings({

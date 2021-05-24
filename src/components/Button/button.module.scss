@@ -26,8 +26,7 @@
     justify-content: center;
 
     color: $primary-white;
-    font-style: normal;
-    font-weight: normal;
+
     font-size: 11.5px;
     line-height: 13px;
     text-align: center;
@@ -71,7 +70,7 @@
     }
 
     .text {
-      color: $button-gray-text;
+      color: $gray-text;
     }
   }
 }

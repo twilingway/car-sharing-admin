@@ -7,7 +7,7 @@ import { ReactComponent as PanSVG } from '../../assets/pan.svg';
 import { ReactComponent as PostSVG } from '../../assets/posts.svg';
 
 import { ReactComponent as NewPostSVG } from '../../assets/newPosts.svg';
-import s from './side-bar.module.scss';
+import s from './sideBar.module.scss';
 
 function SideBar() {
   return (

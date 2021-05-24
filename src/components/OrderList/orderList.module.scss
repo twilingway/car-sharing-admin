@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .title {
   display: flex;
   flex: 0 0 68px;
@@ -12,7 +14,6 @@
   h1 {
     font-size: 29px;
     line-height: 33px;
-    letter-spacing: -0.725px;
 
     color: #3d5170;
   }
@@ -22,7 +23,7 @@
   display: flex;
   flex: 0 1 386px;
 
-  background: #ffffff;
+  background: $primary-white;
   box-shadow: 0px 2px 0px rgba(90, 97, 105, 0.11),
     0px 4px 8px rgba(90, 97, 105, 0.12), 0px 10px 10px rgba(90, 97, 105, 0.06),
     0px 7px 70px rgba(90, 97, 105, 0.1);
@@ -54,27 +55,54 @@
         flex: 0 0 95px;
         margin-right: 22px;
         height: 30px;
-        background: #007bff;
-        border: 0.5px solid #007bff;
+        background: $primary-accent;
+        border: 0.5px solid $primary-accent;
         box-sizing: border-box;
         border-radius: 4px;
 
-        font-family: Helvetica;
-        font-style: normal;
-        font-weight: normal;
         font-size: 11px;
         line-height: 13px;
         /* identical to box height */
 
         text-align: center;
-        letter-spacing: -0.345714px;
 
-        color: #ffffff;
+        color: $primary-white;
       }
     }
     .main {
       flex: 1 1 auto;
       min-height: 268px;
+
+      .row {
+        display: flex;
+        align-items: center;
+        height: 63px;
+        .image {
+          width: 138px;
+          height: 63px;
+          margin-left: 21px;
+          margin-right: 16px;
+          img {
+            height: 63px;
+            object-fit: contain;
+          }
+        }
+
+        .orderInfo {
+          width: 258px;
+          margin-right: 86px;
+        }
+
+        .additional {
+        }
+        .price {
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        .buttonGroup {
+        }
+      }
     }
     .footer {
       display: flex;

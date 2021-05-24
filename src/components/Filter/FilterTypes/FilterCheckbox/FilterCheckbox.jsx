@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
-import s from './filter-checkbox.module.scss';
+import s from './filterCheckbox.module.scss';
 
 function FilterCheckbox({
   id,
@@ -25,7 +25,7 @@ function FilterCheckbox({
         (item) =>
           item.name === defaultChecked &&
           item[item.id] !== true &&
-          onChangeBox(item.id)
+          onChangeBox(item.id),
       );
     }
   }, []);

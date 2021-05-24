@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .cardCar {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   flex: 0 0 335px;
   height: 506px;
   margin: 0px 14px;
-  background: #ffffff;
+  background: $primary-white;
 
   @media (max-width: 1024px) {
     margin: 7px;
@@ -31,28 +33,20 @@
   }
 
   .name {
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: normal;
     font-size: 24.5px;
     line-height: 28px;
     text-align: center;
-    letter-spacing: -0.6125px;
     margin-bottom: 4px;
-    color: #3d5170;
+    color: $gray-text;
   }
   .type {
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: normal;
     font-size: 12.5px;
     line-height: 14px;
     /* identical to box height */
 
     text-align: center;
-    letter-spacing: -0.3125px;
 
-    color: #818ea3;
+    color: $gray-text;
     margin-bottom: 10px;
   }
 
@@ -68,45 +62,32 @@
 
     padding: 22px;
 
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: normal;
     font-size: 13px;
     line-height: 15px;
     /* identical to box height */
 
-    letter-spacing: -0.408571px;
+    color: $grey-dark;
 
-    color: #868e96;
-
-    background: #ffffff;
+    background: $primary-white;
     box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.12),
       0px 1px 0px rgba(0, 0, 0, 0.12);
   }
   .discription {
     padding: 22px;
     .title {
-      font-family: Roboto;
-      font-style: normal;
       font-weight: 500;
       font-size: 13px;
       line-height: 15px;
-      letter-spacing: -0.408571px;
 
-      color: #868e96;
+      color: $grey-dark;
       margin-bottom: 13.5px;
     }
     .text {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
       font-size: 13.5px;
       line-height: 19px;
       /* or 144% */
 
-      letter-spacing: -0.408571px;
-
-      color: #5a6169;
+      color: $grey-dark;
     }
   }
 }

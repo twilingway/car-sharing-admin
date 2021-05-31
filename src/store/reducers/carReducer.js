@@ -5,6 +5,8 @@ const carInitialState = {
   isFetch: false,
   isError: false,
   isSuccess: false,
+  page: 1,
+  limit: 10,
   data: [],
   error: {},
 };
@@ -12,7 +14,12 @@ const carInitialState = {
 export const slice = createSlice({
   name: 'car',
   initialState: carInitialState,
-  reducers: {},
+  reducers: {
+    setCarPage: (state, action) => ({
+      ...state,
+      page: action.payload,
+    }),
+  },
   extraReducers: {
     [fetchCar.pending]: (state) => ({
       ...state,
@@ -26,7 +33,8 @@ export const slice = createSlice({
       ...state,
       isFetch: false,
       isSuccess: true,
-      data: action.payload,
+      count: action.payload.count,
+      data: action.payload.data,
     }),
     [fetchCar.rejected]: (state, action) => ({
       ...state,
@@ -58,5 +66,7 @@ export const slice = createSlice({
     }),
   },
 });
+
+export const { setCarPage } = slice.actions;
 
 export default slice.reducer;

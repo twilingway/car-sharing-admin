@@ -18,14 +18,14 @@ export const putOrder = createAsyncThunk('order/putOrder', async (body) => {
   return response.data;
 });
 
-export const getOrders = createAsyncThunk('order/getAllOrders', async () => {
-  const response = await getAllOrders();
+const getOrders = createAsyncThunk('order/getAllOrders', async (urlParams) => {
+  const response = await getAllOrders(urlParams);
   return response;
 });
 
-const postOrder = createAsyncThunk('order/postOrder', async (body) => {
+export const postOrder = createAsyncThunk('order/postOrder', async (body) => {
   const response = await orderPost(body);
   return response.data;
 });
 
-export default postOrder;
+export default getOrders;

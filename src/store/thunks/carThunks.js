@@ -3,7 +3,7 @@ import { getCar, getCarByCategory } from '../../api/carApi';
 
 export const fetchCar = createAsyncThunk('car/fetchCar', async (urlParams) => {
   const response = await getCar(urlParams);
-  return response.data;
+  return response;
 });
 
 export const fetchCarById = createAsyncThunk('car/fetchCarById', async (id) => {

@@ -9,11 +9,6 @@ const headersConfig = {
   Authorization: `Basic ${base}`,
 };
 
-const headersConfigAuth = {
-  'X-Api-Factory-Application-Id': process.env.REACT_APP_X_API_FACTORY_KEY,
-  Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-};
-
 async function requestHttp(
   url,
   method = 'GET',
@@ -38,12 +33,17 @@ async function requestHttp(
 
 export async function requestHttpAuth(
   url,
+  params,
   method = 'GET',
   body = null,
-  headers = headersConfigAuth || {},
 ) {
+  const headers = {
+    'X-Api-Factory-Application-Id': process.env.REACT_APP_X_API_FACTORY_KEY,
+    Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+  };
   let newBody = { ...body };
   const newHeader = headers;
+
   if (newBody) {
     newBody = JSON.stringify(newBody);
     newHeader['Content-Type'] = 'application/json';
@@ -54,6 +54,7 @@ export async function requestHttpAuth(
     method,
     headers,
     data: newBody,
+    params,
   });
   return res.data;
 }

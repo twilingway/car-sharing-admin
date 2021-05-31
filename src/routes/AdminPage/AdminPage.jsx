@@ -22,7 +22,7 @@ function AdminPage({ children, onLogout }) {
   return (
     <div className={s.wrapper}>
       <SideBarContainer />
-      <content className={s.content}>
+      <div className={s.content}>
         <header className={s.header}>
           <div className={s.search}>
             <SearchSVG className={s.searchSVG} />
@@ -67,7 +67,7 @@ function AdminPage({ children, onLogout }) {
           </div>
           <div className={s.copyright}>Copyright © 2020 Simbirsoft</div>
         </footer>
-      </content>
+      </div>
     </div>
   );
 }

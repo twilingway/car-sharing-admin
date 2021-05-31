@@ -8,19 +8,17 @@
     align-items: center;
     color: $primary-accent;
     // margin: 0 8px;
-    padding: 8px;
-    width: max-content;
-    height: max-content;
+    padding: 0 5px;
 
-    min-width: 28px;
-    min-height: 28px;
+    // min-width: 18px;
+    height: 18px;
 
     font-size: 15px;
     line-height: 17px;
 
     text-decoration: none;
     transition: background-color 0.3s;
-    border-radius: 50%;
+    border-radius: 9px;
 
     &.active {
       background-color: dodgerblue;
@@ -35,4 +33,9 @@
 .pagination div:hover:not(.active) {
   background-color: $secondary-gray;
   cursor: pointer;
+}
+
+.pagination .noClick:hover:not(.active) {
+  cursor: default;
+  background-color: transparent;
 }

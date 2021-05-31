@@ -2,11 +2,12 @@
 import React from 'react';
 import Autocomplete from '../Autocomplete/Autocomplete';
 import Button from '../Button';
+import Image from '../ImageLazy';
 import Pagination from '../Pagination/Pagination';
 
 import s from './carList.module.scss';
 
-function CarList({ carList }) {
+function CarList({ carList, onPageClick }) {
   return (
     <div className={s.wrapper}>
       <div className={s.container}>
@@ -39,14 +40,18 @@ function CarList({ carList }) {
             </thead>
             <tbody>
               {carList &&
-                carList.map((item, index) => (
-                  <tr key={index + item.name}>
-                    <td>{item.name}</td>
-                    <td>{item.categoryId.name}</td>
+                carList.data.map((item, index) => (
+                  <tr key={index + item?.name}>
+                    <td>{item?.name}</td>
+                    <td>{item?.categoryId?.name}</td>
                     <td>
-                      <img
+                      {/* <img
                         src={`${process.env.REACT_APP_BASE_URL}${item.thumbnail.path}`}
                         alt={item.name}
+                      /> */}
+                      <Image
+                        src={item.thumbnail.path}
+                        alt={item?.categoryId?.name}
                       />
                     </td>
                     <td>{item.description}</td>
@@ -58,7 +63,12 @@ function CarList({ carList }) {
             </tbody>
           </table>
           <footer>
-            <Pagination />
+            <Pagination
+              count={carList.count}
+              limit={carList.limit}
+              page={carList.page}
+              onPageClick={onPageClick}
+            />
           </footer>
         </div>
       </div>

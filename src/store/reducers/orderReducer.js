@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import postOrder, {
+import getOrders, {
   fetchOrderById,
+  postOrder,
   putOrder,
-  getOrders,
 } from '../thunks/orderThunks';
 
 export const slice = createSlice({
@@ -14,6 +14,7 @@ export const slice = createSlice({
     count: null,
     page: 1,
     limit: 10,
+    orderStatusId: null,
     data: [
       {
         id: null,
@@ -51,7 +52,16 @@ export const slice = createSlice({
     ],
     error: {},
   },
-  reducers: {},
+  reducers: {
+    setOrderPage: (state, action) => ({
+      ...state,
+      page: action.payload,
+    }),
+    setOrderStatusId: (state, action) => ({
+      ...state,
+      orderStatusId: action.payload,
+    }),
+  },
   extraReducers: {
     [postOrder.pending]: (state) => ({
       ...state,
@@ -140,5 +150,7 @@ export const slice = createSlice({
     }),
   },
 });
+
+export const { setOrderPage, setOrderStatusId } = slice.actions;
 
 export default slice.reducer;

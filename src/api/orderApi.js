@@ -5,11 +5,8 @@ export async function getOrderById(id) {
   return res;
 }
 
-export async function getAllOrders() {
-  const page = 1;
-  const limit = 10;
-
-  const res = await requestHttpAuth(`db/order?page=${page}&limit=${limit}`);
+export async function getAllOrders(params) {
+  const res = await requestHttpAuth('db/order', params);
   return res;
 }
 

@@ -1,9 +1,7 @@
-import requestHttp from './http';
+import requestHttp, { requestHttpAuth } from './http';
 
 export async function getCar(urlParams) {
-  const { page, limit } = urlParams;
-  console.log('lim :>> ', limit);
-  const res = await requestHttp(`db/car?page=${page}&limit=${limit}`);
+  const res = await requestHttpAuth('db/car', urlParams);
   return res;
 }
 

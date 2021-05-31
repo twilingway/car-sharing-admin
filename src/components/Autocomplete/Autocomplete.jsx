@@ -78,7 +78,7 @@ const colourStyles = {
 
 function Autocomplete({
   options,
-  onSelectCity,
+  onSelect,
   label,
   placeholder,
   isDisabled,
@@ -86,8 +86,8 @@ function Autocomplete({
 }) {
   const [selectedValue, setSelectedValue] = useState({});
 
-  const handleSelectCity = (elem) => {
-    onSelectCity(elem);
+  const handleSelect = (elem) => {
+    onSelect(elem);
   };
 
   useEffect(() => {
@@ -110,7 +110,7 @@ function Autocomplete({
           isClearable
           isSearchable
           placeholder={placeholder}
-          onChange={(elem) => handleSelectCity(elem)}
+          onChange={(elem) => handleSelect(elem)}
         />
       </div>
     </div>

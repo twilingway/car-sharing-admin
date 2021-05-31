@@ -75,8 +75,16 @@
 
       .row {
         display: flex;
+        // justify-content: space-between;
         align-items: center;
-        height: 63px;
+        min-height: 63px;
+        margin-bottom: 8px;
+
+        &:hover {
+          background: $grey-light;
+          cursor: pointer;
+        }
+
         .image {
           width: 138px;
           height: 63px;
@@ -89,11 +97,12 @@
         }
 
         .orderInfo {
-          width: 258px;
-          margin-right: 86px;
+          min-width: 258px;
+          // margin-right: 86px;
         }
 
         .additional {
+          width: 60px;
         }
         .price {
           font-size: 24px;

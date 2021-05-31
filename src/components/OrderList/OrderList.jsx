@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
+import React from 'react';
 import Autocomplete from '../Autocomplete/Autocomplete';
 import Pagination from '../Pagination';
 
@@ -14,7 +13,6 @@ function OrderList({
   orderStatus,
   onSelect,
 }) {
-  console.log('orderStatus :>> ', orderStatus);
   return (
     <>
       <div className={s.title}>

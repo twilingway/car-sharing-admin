@@ -28,6 +28,7 @@ function FilterCheckbox({
           onChangeBox(item.id),
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChangeBox = (event) => {

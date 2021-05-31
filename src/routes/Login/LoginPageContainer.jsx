@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import login from '../../api/loginApi';
 import { selectLogin } from '../../store/selectors/loginSelectors';
 import fetchLogin from '../../store/thunks/loginThunks';
 import LoginPage from './LoginPage';

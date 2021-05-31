@@ -20,6 +20,7 @@ function CarListContainer() {
 
   useEffect(() => {
     dispatch(fetchCar({ page: carReducer.page, limit: carReducer.limit }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (carReducer.isFetch) {

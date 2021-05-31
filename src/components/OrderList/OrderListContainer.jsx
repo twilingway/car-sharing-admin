@@ -31,17 +31,17 @@ function CarOrderContainer() {
   };
 
   const handleOrderStatusSelect = (orderStatus) => {
-    console.log('handleOrderStatusSelect :>> ', orderStatus);
     dispatch(setOrderStatusId(orderStatus.value));
   };
 
   useEffect(() => {
     dispatch(getOrders({ page: orderReducer.page, limit: orderReducer.limit }));
-  }, [dispatch, orderReducer.page]);
+  }, [dispatch, orderReducer.limit, orderReducer.page]);
 
   useEffect(() => {
     dispatch(fetchOrderStatus());
     dispatch(getOrders({ page: orderReducer.page, limit: orderReducer.limit }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (orderReducer.isFetch) {

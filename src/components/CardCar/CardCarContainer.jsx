@@ -9,6 +9,7 @@ function CardCarContainer() {
     if (extFile === 'jpg' || extFile === 'jpeg' || extFile === 'png') {
       // TO DO
     } else {
+      // eslint-disable-next-line no-alert
       alert('Only jpg/jpeg and png files are allowed!');
     }
   };

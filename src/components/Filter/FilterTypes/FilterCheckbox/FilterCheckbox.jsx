@@ -11,6 +11,7 @@ function FilterCheckbox({
   onChangeBox,
   defaultChecked,
   isColumn,
+  isDisabled,
 }) {
   const [active, setActive] = useState({});
 
@@ -58,6 +59,7 @@ function FilterCheckbox({
               className={s.container}
             >
               <input
+                disabled={isDisabled}
                 id={checkbox.id}
                 type="checkbox"
                 name={groupName}

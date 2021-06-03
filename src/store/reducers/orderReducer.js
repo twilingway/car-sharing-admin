@@ -15,6 +15,7 @@ export const slice = createSlice({
     page: 1,
     limit: 10,
     orderStatusId: null,
+    point: null,
     data: [
       {
         id: null,
@@ -60,6 +61,10 @@ export const slice = createSlice({
     setOrderStatusId: (state, action) => ({
       ...state,
       orderStatusId: action.payload,
+    }),
+    setPoint: (state, action) => ({
+      ...state,
+      point: action.payload,
     }),
   },
   extraReducers: {
@@ -151,6 +156,6 @@ export const slice = createSlice({
   },
 });
 
-export const { setOrderPage, setOrderStatusId } = slice.actions;
+export const { setOrderPage, setOrderStatusId, setPoint } = slice.actions;
 
 export default slice.reducer;

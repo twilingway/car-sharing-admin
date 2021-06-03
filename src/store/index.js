@@ -3,6 +3,7 @@ import loginReducer from './reducers/loginReducer';
 import carReducer from './reducers/carReducer';
 import orderReducer from './reducers/orderReducer';
 import orderStatusReducer from './reducers/orderStatusReducer';
+import pointReducer from './reducers/pointReducer';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     car: carReducer,
     order: orderReducer,
     orderStatus: orderStatusReducer,
+    point: pointReducer,
   },
 });

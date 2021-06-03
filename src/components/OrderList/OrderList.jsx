@@ -4,14 +4,21 @@ import Pagination from '../Pagination';
 
 import Image from '../ImageLazy';
 
+import FilterCheckbox from '../Filter/FilterTypes/FilterCheckbox';
 import s from './orderList.module.scss';
+import Button from '../Button/Button';
+import ButtonGroup from '../ButtonGroup/ButtonGroup';
 
 function OrderList({
   orders,
+  points,
   onPageClick,
   onApplyClick,
   orderStatus,
   onSelect,
+  onSelectPoint,
+  valueOrderStatus,
+  valuePoint,
 }) {
   return (
     <>
@@ -23,20 +30,42 @@ function OrderList({
           <div className={s.header}>
             <div className={s.filters}>
               <Autocomplete
+                value={
+                  !valuePoint
+                    ? null
+                    : {
+                        value: valuePoint.value,
+                        label: valuePoint.label,
+                      }
+                }
+                options={points.city.map((item) => ({
+                  value: item.id,
+                  label: item.name,
+                }))}
+                placeholder="Город"
+                onSelect={onSelectPoint}
+              />
+              <Autocomplete
+                value={
+                  !valueOrderStatus
+                    ? null
+                    : {
+                        value: valueOrderStatus.value,
+                        label: valueOrderStatus.label,
+                      }
+                }
                 options={orderStatus.map((item) => ({
                   value: item.id,
                   label: item.name,
                 }))}
-                placeholder="Выбери тип"
+                placeholder="Статус"
                 onSelect={onSelect}
               />
-              {/* <Autocomplete />
-              <Autocomplete />
-              <Autocomplete /> */}
             </div>
-            <button type="button" onClick={onApplyClick}>
+            <Button onClickHandler={onApplyClick} name="Применить" />
+            {/* <button type="button" onClick={onApplyClick}>
               Применить
-            </button>
+            </button> */}
           </div>
           <div className={s.main}>
             {orders.data.map((order) => (
@@ -61,12 +90,41 @@ function OrderList({
                   </div>
                 </div>
                 <div className={s.additional}>
-                  <div className={s.fullTank}>{order?.isFullTank}</div>
-                  <div className={s.chair}>{order?.isNeedChildChair}</div>
-                  <div className={s.rightWhell}>{order?.isRightWheel}</div>
+                  <FilterCheckbox
+                    id={order.id}
+                    isDisabled
+                    checkboxs={[
+                      {
+                        id: 'isFullTank',
+                        isFullTank: order.isFullTank,
+                        name: 'Полный бак',
+                        price: ', 500р',
+                      },
+                      {
+                        id: 'isNeedChildChair',
+                        isNeedChildChair: order.isNeedChildChair,
+                        name: 'Детское кресло',
+                        price: ', 200р',
+                      },
+                      {
+                        id: 'isRightWheel',
+                        isRightWheel: order.isRightWheel,
+                        name: 'Правый руль',
+                        price: ', 1600р',
+                      },
+                    ]}
+                    // onChangeBox={onChangeServices}
+                    // groupName="Доп услуги"
+                    // defaultChecked={
+                    //   orderRedux.isFullTank === null && 'Полный бак'
+                    // }
+                    isColumn
+                  />
                 </div>
                 <div className={s.price}>{order.price} ₽</div>
-                <div className={s.buttonGroup}>кнопки</div>
+                <div className={s.buttonGroup}>
+                  <ButtonGroup />
+                </div>
               </div>
             ))}
           </div>

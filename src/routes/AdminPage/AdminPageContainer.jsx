@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import CarCardContainer from '../../components/CarCard';
 import CarListContainer from '../../components/CarList';
+import EntityContainer from '../../components/Entity';
 import Error500Container from '../../components/Error500';
 import OrderListContainer from '../../components/OrderList';
 import { fetchLogout } from '../../store/thunks/loginThunks';
@@ -23,6 +24,8 @@ function AdminPageContainer() {
         return <OrderListContainer />;
       case 'error':
         return <Error500Container />;
+      case 'entity':
+        return <EntityContainer />;
       default:
         return history.push('/404');
     }

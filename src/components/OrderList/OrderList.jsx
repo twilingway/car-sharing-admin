@@ -113,24 +113,19 @@ function OrderList({
                         price: ', 1600р',
                       },
                     ]}
-                    // onChangeBox={onChangeServices}
-                    // groupName="Доп услуги"
-                    // defaultChecked={
-                    //   orderRedux.isFullTank === null && 'Полный бак'
-                    // }
                     isColumn
                   />
                 </div>
                 <div className={s.price}>{order.price} ₽</div>
                 <div className={s.buttonGroup}>
-                  {order?.orderStatusId?.name === 'new' && (
-                    <ButtonGroup
-                      id={order.id}
-                      onReadyClick={onReadyClick}
-                      onCancelClick={onCancelClick}
-                      onEditClick={onEditClick}
-                    />
-                  )}
+                  <ButtonGroup
+                    id={order.id}
+                    status={order?.orderStatusId?.name}
+                    isDisabled={order?.orderStatusId?.name !== 'new'}
+                    onReadyClick={onReadyClick}
+                    onCancelClick={onCancelClick}
+                    onEditClick={onEditClick}
+                  />
                 </div>
               </div>
             ))}

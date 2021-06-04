@@ -21,12 +21,36 @@
   }
 }
 
+button:disabled,
+button[disabled] {
+  background-color: $grey-light;
+  cursor: default;
+
+  &:hover {
+    background: $grey-light;
+  }
+}
+
 .ready {
   border-radius: 4px 0px 0px 4px;
   border-right: none;
   svg {
     path {
       fill: $secondary-green;
+    }
+  }
+  &.status {
+    background: $secondary-green;
+    color: $primary-white;
+
+    svg {
+      path {
+        fill: $primary-white;
+      }
+    }
+
+    &:hover {
+      background: $secondary-green;
     }
   }
 }
@@ -36,6 +60,20 @@
   svg {
     path {
       fill: $secondary-red;
+    }
+  }
+  &.status {
+    background: $secondary-red;
+    color: $primary-white;
+
+    svg {
+      path {
+        fill: $primary-white;
+      }
+    }
+
+    &:hover {
+      background: $secondary-red;
     }
   }
 }

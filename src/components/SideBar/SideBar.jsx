@@ -62,27 +62,16 @@ function SideBar() {
             Ошибка 500
           </li>
         </Link>
-        <li
-          className={cn(s.item, {
-            [s.item_active]: false,
-          })}
-        >
-          Menu 5
-        </li>
-        <li
-          className={cn(s.item, {
-            [s.item_active]: false,
-          })}
-        >
-          Menu 6
-        </li>
-        <li
-          className={cn(s.item, {
-            [s.item_active]: false,
-          })}
-        >
-          Menu 7
-        </li>
+
+        <Link to="/admin/entity">
+          <li
+            className={cn(s.item, {
+              [s.item_active]: false,
+            })}
+          >
+            Сущности
+          </li>
+        </Link>
       </ul>
     </div>
   );

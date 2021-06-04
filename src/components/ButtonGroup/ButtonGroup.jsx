@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import cn from 'classnames';
 
 import { ReactComponent as Close } from '../../assets/close.svg';
 import { ReactComponent as Vdots } from '../../assets/vdots.svg';
@@ -7,12 +7,33 @@ import { ReactComponent as CheckIcon } from '../../assets/check_icon.svg';
 
 import s from './buttonGroup.module.scss';
 
-function ButtonGroup({ onReadyClick, onCancelClick, onEditClick }) {
+function ButtonGroup({ onReadyClick, onCancelClick, onEditClick, id }) {
   return (
     <>
-      <Button className={s.button} name="Готово" Icon={CheckIcon} />
-      <Button className={s.button} name="Отмена" Icon={Close} />
-      <Button className={s.button} name="Изменить" Icon={Vdots} />
+      <button
+        type="button"
+        className={cn(s.button, s.ready)}
+        onClick={() => onReadyClick(id)}
+      >
+        <CheckIcon />
+        <span>Готово</span>
+      </button>
+      <button
+        type="button"
+        className={cn(s.button, s.cancel)}
+        onClick={() => onCancelClick(id)}
+      >
+        <Close />
+        <span>Отмена</span>
+      </button>
+      <button
+        type="button"
+        className={cn(s.button, s.edit)}
+        onClick={() => onEditClick(id)}
+      >
+        <Vdots />
+        <span>Изменить</span>
+      </button>
     </>
   );
 }

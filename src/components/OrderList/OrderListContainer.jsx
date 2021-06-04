@@ -10,7 +10,7 @@ import { selectOrder } from '../../store/selectors/orderSelectors';
 import { selectOrderStatus } from '../../store/selectors/orderStatusSelectors';
 import { selectPoint } from '../../store/selectors/pointSelectors';
 import fetchOrderStatus from '../../store/thunks/orderStatusThunks';
-import getOrders from '../../store/thunks/orderThunks';
+import getOrders, { putOrder } from '../../store/thunks/orderThunks';
 import { fetchCity } from '../../store/thunks/pointThunks';
 import Loader from '../Loader';
 import OrderList from './OrderList';
@@ -21,28 +21,26 @@ function CarOrderContainer() {
   const pointReducer = useSelector(selectPoint);
   const dispatch = useDispatch();
 
-  const handlePageClick = (page) => {
-    dispatch(setOrderPage(page));
+  const handleGetOrders = (page) => {
     dispatch(
       getOrders({
-        page,
+        page: !page ? orderReducer.page : page,
         limit: orderReducer.limit,
         orderStatusId: orderReducer.orderStatusId?.value,
         cityId: orderReducer.point?.value,
+        'sort[dateTo]': -1,
       }),
     );
   };
 
+  const handlePageClick = (page) => {
+    dispatch(setOrderPage(page));
+    handleGetOrders(page);
+  };
+
   const handleApplyCLick = () => {
     dispatch(setOrderPage(1));
-    dispatch(
-      getOrders({
-        page: 1,
-        limit: orderReducer.limit,
-        orderStatusId: orderReducer.orderStatusId?.value,
-        cityId: orderReducer.point?.value,
-      }),
-    );
+    handleGetOrders(1);
   };
 
   const handleOrderStatusSelect = (orderStatus) => {
@@ -53,13 +51,33 @@ function CarOrderContainer() {
     dispatch(setPoint(point));
   };
 
-  // useEffect(() => {
-  //   dispatch(getOrders({ page: orderReducer.page, limit: orderReducer.limit }));
-  // }, [dispatch, orderReducer.limit, orderReducer.page]);
+  const handleReadyClick = async (id) => {
+    const order = orderReducer.data.find((item) => item.id === id);
+    const orderStatusConfirmed = orderStatusReducer.data.find(
+      (item) => item.name === 'confirmed',
+    );
+    const confirm = { ...order, orderStatusId: orderStatusConfirmed };
+
+    await dispatch(putOrder(confirm));
+    handleGetOrders();
+  };
+  const handleCancelClick = async (id) => {
+    const order = orderReducer.data.find((item) => item.id === id);
+    const orderStatusCancelled = orderStatusReducer.data.find(
+      (item) => item.name === 'cancelled',
+    );
+    const censeled = { ...order, orderStatusId: orderStatusCancelled };
+
+    await dispatch(putOrder(censeled));
+    handleGetOrders();
+  };
+  const handleEditClick = (id) => {
+    console.log('Editid :>> ', id);
+  };
 
   useEffect(() => {
     dispatch(fetchOrderStatus());
-    dispatch(getOrders({ page: orderReducer.page, limit: orderReducer.limit }));
+    handleGetOrders();
     dispatch(fetchCity());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -79,6 +97,9 @@ function CarOrderContainer() {
       onSelectPoint={handlePointSelect}
       valueOrderStatus={orderReducer.orderStatusId}
       valuePoint={orderReducer.point}
+      onReadyClick={handleReadyClick}
+      onCancelClick={handleCancelClick}
+      onEditClick={handleEditClick}
     />
   );
 }

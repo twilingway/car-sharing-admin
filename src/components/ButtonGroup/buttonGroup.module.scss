@@ -6,16 +6,24 @@
   background: $primary-white;
   border: 0.5px solid $border-select;
   box-sizing: border-box;
+  width: 71px;
+  height: 24px;
+  color: $grey-dark;
 
-  > span:first-child {
-    padding: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  > svg:first-child {
+    margin: 8px 4px 8px 8px;
   }
-  > span:nth-child(2) {
-    color: $grey-dark;
+
+  &:hover {
+    background: $grey-light;
   }
 }
 
 .ready {
+  border-radius: 4px 0px 0px 4px;
+  border-right: none;
   svg {
     path {
       fill: $secondary-green;
@@ -24,6 +32,7 @@
 }
 
 .cancel {
+  border-right: none;
   svg {
     path {
       fill: $secondary-red;
@@ -32,4 +41,5 @@
 }
 
 .edit {
+  border-radius: 0px 4px 4px 0px;
 }

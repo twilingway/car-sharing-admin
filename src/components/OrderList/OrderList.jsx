@@ -19,6 +19,9 @@ function OrderList({
   onSelectPoint,
   valueOrderStatus,
   valuePoint,
+  onReadyClick,
+  onCancelClick,
+  onEditClick,
 }) {
   return (
     <>
@@ -63,9 +66,6 @@ function OrderList({
               />
             </div>
             <Button onClickHandler={onApplyClick} name="Применить" />
-            {/* <button type="button" onClick={onApplyClick}>
-              Применить
-            </button> */}
           </div>
           <div className={s.main}>
             {orders.data.map((order) => (
@@ -123,7 +123,14 @@ function OrderList({
                 </div>
                 <div className={s.price}>{order.price} ₽</div>
                 <div className={s.buttonGroup}>
-                  <ButtonGroup />
+                  {order?.orderStatusId?.name === 'new' && (
+                    <ButtonGroup
+                      id={order.id}
+                      onReadyClick={onReadyClick}
+                      onCancelClick={onCancelClick}
+                      onEditClick={onEditClick}
+                    />
+                  )}
                 </div>
               </div>
             ))}

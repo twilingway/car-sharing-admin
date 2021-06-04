@@ -98,7 +98,13 @@ export const slice = createSlice({
 
     [putOrder.fulfilled]: (state, action) => ({
       ...state,
-      ...action.payload,
+      data: state.data.map((index) => {
+        if (index.id === action.payload.id) {
+          return action.payload;
+        }
+        return index;
+      }),
+      // ...action.payload,
       isFetch: false,
       isSuccess: true,
     }),

@@ -11,11 +11,11 @@ export async function getAllOrders(params) {
 }
 
 export async function orderPut(body) {
-  const res = await requestHttp(`order/${body.id}`, 'PUT', body);
+  const res = await requestHttp(`db/order/${body.id}`, 'PUT', body);
   return res;
 }
 
 export default async function orderPost(body) {
-  const res = await requestHttp('order', 'POST', body);
+  const res = await requestHttp('db/order', 'POST', body);
   return res;
 }

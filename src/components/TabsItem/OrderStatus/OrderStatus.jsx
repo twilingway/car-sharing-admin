@@ -1,8 +1,6 @@
 import React from 'react';
 import ButtonEditGroup from '../../ButtonEditGroup';
 
-import ButtonGroup from '../../ButtonGroup';
-
 import s from './orderStatus.module.scss';
 
 function OrderStatus({ orders, onEditClick, editable, onChange, editValue }) {

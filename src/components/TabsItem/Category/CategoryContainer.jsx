@@ -27,6 +27,7 @@ function CategoryContainer() {
 
   useEffect(() => {
     dispatch(fetchCategory());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

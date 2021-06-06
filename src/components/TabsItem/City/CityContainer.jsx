@@ -11,6 +11,7 @@ function CityContainer() {
 
   useEffect(() => {
     dispatch(fetchCity());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <City city={pointReducer.city} />;
 }

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
 import CategoryContainer from '../TabsItem/Category';
 import CityContainer from '../TabsItem/City';
@@ -42,10 +41,6 @@ const TABS = [
 ];
 
 function TabsContainer({ children, isVertical, tabs }) {
-  const dispatch = useDispatch();
-
-  const [activeTab, setActiveTab] = useState(null);
-
   return <Tabs tabs={TABS} />;
 }
 

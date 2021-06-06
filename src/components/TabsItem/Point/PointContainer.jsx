@@ -11,6 +11,7 @@ function PointContainer() {
 
   useEffect(() => {
     dispatch(fetchPoint());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <Point points={pointReducer.street} />;
 }

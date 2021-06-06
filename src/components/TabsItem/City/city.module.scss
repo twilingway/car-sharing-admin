@@ -1,0 +1,55 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 22px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    .params {
+      display: flex;
+      flex: 1 1 60%;
+      flex-wrap: wrap;
+      .name {
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        flex: 1 0 240px;
+        span {
+          margin-right: 8px;
+        }
+        input {
+          display: inline-block;
+        }
+      }
+      .description {
+        display: flex;
+        align-items: center;
+        // flex-wrap: wrap;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        flex: 1 1 100%;
+        span {
+          margin-right: 8px;
+        }
+        input {
+          //   display: flex;
+          //   display: inline-block;
+          flex: 1 1 300px;
+          @media (max-width: 768px) {
+          }
+        }
+      }
+    }
+    .editGroup {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+  }
+}

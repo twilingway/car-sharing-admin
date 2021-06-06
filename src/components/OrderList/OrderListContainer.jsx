@@ -11,7 +11,7 @@ import { selectOrderStatus } from '../../store/selectors/orderStatusSelectors';
 import { selectPoint } from '../../store/selectors/pointSelectors';
 import fetchOrderStatus from '../../store/thunks/orderStatusThunks';
 import getOrders, { putOrder } from '../../store/thunks/orderThunks';
-import { fetchCity } from '../../store/thunks/pointThunks';
+import fetchCity from '../../store/thunks/pointThunks';
 import Loader from '../Loader';
 import OrderList from './OrderList';
 
@@ -71,9 +71,7 @@ function CarOrderContainer() {
     await dispatch(putOrder(censeled));
     handleGetOrders();
   };
-  const handleEditClick = (id) => {
-    console.log('Editid :>> ', id);
-  };
+  const handleEditClick = (id) => {};
 
   useEffect(() => {
     dispatch(fetchOrderStatus());

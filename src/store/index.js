@@ -4,6 +4,7 @@ import carReducer from './reducers/carReducer';
 import orderReducer from './reducers/orderReducer';
 import orderStatusReducer from './reducers/orderStatusReducer';
 import pointReducer from './reducers/pointReducer';
+import categoryReducer from './reducers/categoryReducer';
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     order: orderReducer,
     orderStatus: orderStatusReducer,
     point: pointReducer,
+    category: categoryReducer,
   },
 });

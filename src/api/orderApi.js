@@ -1,7 +1,7 @@
 import requestHttp, { requestHttpAuth } from './http';
 
 export async function getOrderById(id) {
-  const res = await requestHttp(`order/${id}`);
+  const res = await requestHttp(`db/order/${id}`);
   return res;
 }
 

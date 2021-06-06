@@ -16,10 +16,16 @@ function LoginPageContainer() {
 
   useEffect(() => {
     if (loginReducer.data.access_token) {
+      const expiresDate = new Date();
+      expiresDate.setSeconds(
+        expiresDate.getSeconds() + loginReducer.data.expires_in,
+      );
       localStorage.setItem('access_token', loginReducer.data.access_token);
+      localStorage.setItem('expires_in', expiresDate);
+
       history.push('/admin/card');
     }
-  }, [history, loginReducer.data.access_token]);
+  }, [history, loginReducer.data.access_token, loginReducer.data.expires_in]);
 
   return <LoginPage onSubmit={handleSubmitLoginForm} />;
 }

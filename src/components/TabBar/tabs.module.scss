@@ -10,6 +10,7 @@
 .items {
   display: flex;
   flex-wrap: wrap;
+  background-color: $grey-light;
   .item {
     flex: 0 1 16.666%;
     height: 50px;
@@ -18,11 +19,17 @@
     align-items: center;
     text-transform: uppercase;
     text-decoration: none;
+
     background-color: $grey-light;
     span {
       position: relative;
       z-index: 2;
       color: $primary-black;
+    }
+
+    &.active {
+      background: $primary-white;
+      border-radius: 8px 8px 0 0;
     }
   }
 }
@@ -45,10 +52,10 @@
   padding: 20px;
   display: none;
   background-color: $primary-white;
-}
 
-.block:target {
-  display: block;
+  &.activeBlock {
+    display: block;
+  }
 }
 
 @media (max-width: 600px) {

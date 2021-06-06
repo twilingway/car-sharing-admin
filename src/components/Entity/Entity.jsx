@@ -1,5 +1,5 @@
 import React from 'react';
-import TabsContainer from '../Tabs';
+import TabsContainer from '../TabBar';
 
 import s from './entity.module.scss';
 

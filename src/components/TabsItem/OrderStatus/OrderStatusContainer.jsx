@@ -22,6 +22,7 @@ function OrderStatusContainer() {
 
   useEffect(() => {
     dispatch(fetchOrderStatus());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <OrderStatus

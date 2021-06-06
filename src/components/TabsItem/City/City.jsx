@@ -1,8 +1,9 @@
 import React from 'react';
+import ButtonEditGroup from '../../ButtonEditGroup';
 
 import s from './city.module.scss';
 
-function City({ city }) {
+function City({ city, onEditClick }) {
   return (
     <div className={s.content}>
       {city?.map((item) => (
@@ -16,7 +17,9 @@ function City({ city }) {
               <span>Описание:</span> <input disabled value={item.description} />
             </div> */}
           </div>
-          <div className={s.editGroup}>Изменить/Удалить</div>
+          <div className={s.editGroup}>
+            <ButtonEditGroup onEditClick={() => onEditClick(item.id)} />
+          </div>
         </div>
       ))}
     </div>

@@ -1,8 +1,9 @@
 import React from 'react';
+import ButtonEditGroup from '../../ButtonEditGroup';
 
 import s from './point.module.scss';
 
-function Point({ points }) {
+function Point({ points, onEditClick }) {
   return (
     <div className={s.content}>
       {points?.map((item) => (
@@ -19,7 +20,9 @@ function Point({ points }) {
               <span>Название:</span> <input disabled value={item?.name} />
             </div>
           </div>
-          <div className={s.editGroup}>Изменить/Удалить</div>
+          <div className={s.editGroup}>
+            <ButtonEditGroup onEditClick={() => onEditClick(item.id)} />
+          </div>
         </div>
       ))}
     </div>

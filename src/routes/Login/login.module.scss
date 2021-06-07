@@ -1,0 +1,71 @@
+@import '../../variables';
+
+.context {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 376px;
+
+  color: $gray-text;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 28px;
+    .title {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+      margin-left: 12px;
+    }
+  }
+
+  .form {
+    height: 254px;
+    background: $primary-white;
+    box-shadow: 0px 1px 0px rgba(90, 97, 105, 0.11),
+      0px 2px 4px rgba(90, 97, 105, 0.12), 0px 5px 5px rgba(90, 97, 105, 0.06),
+      0px 3.5px 35px rgba(90, 97, 105, 0.1);
+    border-radius: 9px;
+    padding: 0 18px 0px;
+
+    .title {
+      display: inline-block;
+      width: 100%;
+      margin: 20px 0;
+      text-align: center;
+      vertical-align: top;
+
+      font-size: 17.5px;
+      line-height: 20px;
+
+      &:after {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    .login {
+      margin-bottom: 16px;
+    }
+    .password {
+      margin-bottom: 16px;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      > span {
+        font-size: 10.5px;
+        line-height: 12px;
+        color: $primary-accent;
+      }
+    }
+  }
+}

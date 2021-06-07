@@ -1,0 +1,22 @@
+.root {
+  position: relative;
+}
+
+input {
+  height: 30px;
+  width: 100%;
+  font-size: 11px;
+  line-height: 13px;
+  /* identical to box height */
+  padding: 8px;
+
+  border: 0.5px solid #becad6;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.label {
+  font-size: 10.5px;
+  line-height: 12px;
+
+  margin-bottom: 12px;
+}

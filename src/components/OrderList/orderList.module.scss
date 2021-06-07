@@ -1,0 +1,136 @@
+@import '../../variables';
+
+.title {
+  display: flex;
+  flex: 0 0 68px;
+
+  @media (max-width: 1024px) {
+    flex: 0 1 auto;
+  }
+
+  @media (max-width: 460px) {
+    justify-content: center;
+  }
+  h1 {
+    font-size: 29px;
+    line-height: 33px;
+
+    color: #3d5170;
+  }
+}
+
+.carOrder {
+  display: flex;
+  flex: 0 1 386px;
+
+  background: $primary-white;
+  box-shadow: 0px 2px 0px rgba(90, 97, 105, 0.11),
+    0px 4px 8px rgba(90, 97, 105, 0.12), 0px 10px 10px rgba(90, 97, 105, 0.06),
+    0px 7px 70px rgba(90, 97, 105, 0.1);
+  border-radius: 9px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // padding: 0 18px;
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      align-items: center;
+      min-height: 60px;
+      box-shadow: 0px -0.5px 0px #e0e2e8, 0px 0.5px 0px #e0e2e8;
+
+      .filters {
+        display: flex;
+        justify-content: space-between;
+        // flex-wrap: wrap;
+        //flex: 1 1 auto;
+        max-width: 500px;
+        margin-left: 22px;
+        > div {
+          margin-right: 15px;
+        }
+      }
+      button {
+        margin-left: auto;
+        flex: 0 0 95px;
+        margin-right: 22px;
+        height: 30px;
+        background: $primary-accent;
+        border: 0.5px solid $primary-accent;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        font-size: 11px;
+        line-height: 13px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: $primary-white;
+      }
+    }
+    .main {
+      flex: 1 1 auto;
+      min-height: 268px;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 63px;
+        margin-bottom: 4px;
+
+        &:hover {
+          background: $grey-light;
+          cursor: pointer;
+        }
+
+        .image {
+          width: 138px;
+          height: 63px;
+          margin-left: 21px;
+          margin-right: 16px;
+          img {
+            width: 138px;
+            height: 63px;
+            object-fit: contain;
+          }
+        }
+
+        .orderInfo {
+          width: 295px;
+          margin-right: 4px;
+        }
+
+        .additional {
+          width: 135px;
+          margin-right: 4px;
+        }
+        .price {
+          width: 130px;
+          // text-align: center;
+          font-size: 24px;
+          line-height: 28px;
+          margin-right: 4px;
+        }
+
+        .buttonGroup {
+          margin-right: 22px;
+          display: flex;
+          flex: 1 0 214px;
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 60px;
+      height: 60px;
+      box-shadow: 0px -0.5px 0px #e0e2e8, 0px 0.5px 0px #e0e2e8;
+    }
+  }
+}

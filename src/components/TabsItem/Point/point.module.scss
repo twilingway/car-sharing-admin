@@ -1,0 +1,64 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    .params {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 80%;
+      .city {
+        display: flex;
+        align-items: center;
+
+        margin-right: 8px;
+        margin-bottom: 8px;
+        flex: 1 0 170px;
+        span {
+          margin-right: 8px;
+        }
+        input {
+        }
+      }
+      .address {
+        display: flex;
+        align-items: center;
+        // flex-wrap: wrap;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        flex: 1 0 240px;
+        span {
+          margin-right: 8px;
+        }
+        input {
+          // flex: 1 1 300px;
+          @media (max-width: 768px) {
+          }
+        }
+      }
+      .name {
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        flex: 1 0 240px;
+        span {
+          margin-right: 8px;
+        }
+        input {
+        }
+      }
+    }
+    .editGroup {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+  }
+}

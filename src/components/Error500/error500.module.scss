@@ -1,0 +1,60 @@
+@import '../../variables';
+
+.wrap {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 440px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-weight: 500;
+      font-size: 75px;
+      line-height: 88px;
+      /* identical to box height */
+
+      color: #cacedb;
+    }
+    .text {
+      font-weight: normal;
+      font-size: 50px;
+      line-height: 57px;
+      /* identical to box height */
+
+      text-align: center;
+
+      color: $gray-text;
+      margin-bottom: 15px;
+    }
+    .footer {
+      font-size: 20px;
+      line-height: 23px;
+      /* identical to box height */
+
+      text-align: center;
+
+      color: #818ea3;
+      margin-bottom: 35px;
+    }
+
+    button {
+      width: 95px;
+      height: 30px;
+      color: $primary-white;
+      background: $primary-accent;
+      border: 0.5px solid $primary-accent;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

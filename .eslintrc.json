@@ -4,21 +4,22 @@
     "es2021": true
   },
   "extends": [
-    // "eslint:recommended",
-    "plugin:react/recommended",
     "airbnb",
-    "prettier"
+    "airbnb/hooks",
+    "react-app",
+    "prettier",
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
-    "sourceType": "module",
-    "parser": "babel-eslint"
+    "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "react/prop-types": "off",
     "semi": [2, "always"],
     "quotes": ["error", "single"]
   }
